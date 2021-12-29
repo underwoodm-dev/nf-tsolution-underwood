@@ -4,30 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | NFT preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    .card { background-color: hsl(216, 50%, 16%); width:17%; height:60%; margin: 0 auto; margin-top: 10%; margin-bottom: 10%; text-align:justify-left; border-radius:2.5%; box-shadow: 10px 100px 10px 10px hsl(219, 54%, 11%);}
+    body { background-color: hsl(217, 54%, 11%); font-family: 'Outfit', sans-serif;}
+    .card-title {color: hsl(0, 0%, 100%); font-weight: 600; font-size:18px; text-align: justify left; margin-left:5%; cursor:pointer;}
+    .card-picture { width:90%; height:45%; margin-right:6%; margin-left: 5%; margin-top: 5%; border-radius: 2.5%;}
+    .card-description {color: hsl(215, 51%, 70%); text-align: justify left; font-weight:100; font-size:16px; margin-left:5%;}
+    .card-price {color: hsl(178, 100%, 50%);font-size:14px;font-weight:600;display: inline-block; transform: translateY(-3px);}
+    .time-remaining {display: inline-block; font-size:18px; font-weight:400; color: hsl(215, 51%, 70%);font-size:14px; transform: translateY(-3px);}
+    .separator { background-color: hsl(215, 32%, 27%); height:1px; border:none; width: 90%; transform: translateY(-5px);}
+    .ETH-icon { margin-left:4%; margin-right:1%; }
+    .creator {color: hsl(215, 51%, 70%); display: inline-block; font-size:14px; margin-left: 3%; transform: translateY(-40%);}
+    .creator-name {color: hsl(0, 0%, 100%); display: inline-block; font-size:14px; transform: translateY(-21%); padding-bottom: 5%; margin-left: 2%; cursor:pointer;} 
+    .time-icon{ display:inline-block; margin-left:33%; margin-right:2%;}
+    .avatar {height: 8%; width: 8%; aspect-ratio: 1;  margin-left: 5%; border: 1px solid hsl(0, 0%, 100%); border-radius: 50%; display:inline-block;}
+    .creator-name:hover, .card-title:hover {color: hsl(178, 100%, 50%); }
+    .overlay {position: absolute; opacity: 0; top: 45%; left:40%; }
+    .overlay-container {position:absolute; top:21.5%; left:42.5%; width:15%; height:30%; background-color: hsl(178, 100%, 50%); border-radius: 2.5%; opacity: 0;}
+    .overlay-container:hover {opacity:.75; cursor:pointer; background-color: hsl(178, 100%, 50%);}
+    #showcontainer:hover + #showthis {opacity: 1;  cursor:pointer;}
   </style>
+  
 </head>
 <body>
-
-  Equilibrium #3429
-
-  Our Equilibrium collection promotes balance and calm.
-
-  0.041 ETH
-  3 days left
-  
-  Creation of Jules Wyvern
-
+<div class="card">
+  <img class= "card-picture" src="./images/image-equilibrium.jpg" alt="equilibrium-card-picture">
+  <div class = "overlay-container" id="showcontainer"><img class="overlay" id="showthis" src="./images/icon-view.svg" alt="Overlay for Hover State"></div>
+  <h1 class = "card-title">Equilibrium #3429</h1>
+  <p class = "card-description">Our Equilibrium collection promotes balance and calm.</p>
+  <img class = "ETH-icon" src="./images/icon-ethereum.svg" alt="Ethereum Icon">
+  <p class = "card-price">0.041 ETH</p>
+  <img class = "time-icon" src="./images/icon-clock.svg" alt="Clock Icon"><p class = "time-remaining">3 days left</p>
+  <hr class = "separator">
+  <img class = "avatar" src="./images/image-avatar.png" alt="Creator Avatar">
+  <p class = "creator">Creation of <p class = "creator-name">Jules Wyvern</p></p>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Michael Underwood</a>.
   </div>
 </body>
 </html>
